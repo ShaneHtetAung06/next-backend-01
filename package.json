@@ -6,9 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postinstall": "node -e \"const fs=require('fs'),path=require('path');const src=path.join('node_modules','lightningcss-win32-x64-msvc','lightningcss.win32-x64-msvc.node');const dst=path.join('node_modules','lightningcss','lightningcss.win32-x64-msvc.node');if(fs.existsSync(src)&&fs.existsSync(path.dirname(dst)))fs.copyFileSync(src,dst);\""
   },
   "dependencies": {
+    "mongodb": "^5.7.0",
     "next": "16.3.2",
     "react": "19.2.8",
     "react-dom": "19.2.8"
@@ -19,5 +21,8 @@
     "eslint": "^9",
     "eslint-config-next": "16.3.2",
     "tailwindcss": "^4"
+  },
+  "optionalDependencies": {
+    "lightningcss-win32-x64-msvc": "^1.33.0"
   }
 }
