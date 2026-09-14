@@ -40,7 +40,7 @@ export async function GET() {
 
   httpOnly: true, 
 
-  sameSite: "lax", 
+  sameSite: process.env.NODE_ENV == "development" ? "lax" : "none", 
 
   path: "/", 
 
