@@ -12,7 +12,7 @@ const allowedOrigins = [
   "http://localhost:5173",
 ];
 
-export function proxy(request) {
+export function middleware(request) {
   const origin = request.headers.get("origin") || "";
   const isAllowedOrigin = allowedOrigins.includes(origin);
   const allowOrigin = isAllowedOrigin ? origin : allowedOrigins[0];
