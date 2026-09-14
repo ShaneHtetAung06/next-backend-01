@@ -30,9 +30,9 @@ export function GET(request) {
 
  } 
 
- return NextResponse.json(user, { 
+ return NextResponse.json({ _id: user.id, email: user.email, username: user.username }, { 
 
-  status: 201, 
+  status: 200, 
 
   headers: corsHeaders, 
 
